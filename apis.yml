@@ -1,0 +1,84 @@
+aid: inflection-ai
+name: Inflection AI
+description: >-
+  Inflection AI was founded in 2022 by Mustafa Suleyman, Reid Hoffman, and
+  Karen Simonyan to build the consumer assistant Pi, backed by Inflection-1,
+  Inflection-2, and Inflection-2.5 foundation models. In March 2024 Microsoft
+  licensed Inflection's technology for roughly $650M and hired most of the
+  founding team into its new AI division, after which Inflection pivoted to an
+  enterprise AI lab under CEO Sean White. Today the company markets its
+  Inflection-2.5 series and successors to enterprise customers through a
+  Conversational API that integrates Inflection models into business
+  applications. A developer portal is published at developers.inflection.ai
+  with a dashboard, docs, API keys, playground, and usage metering.
+type: Index
+position: Provider
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - AI
+  - Foundation Models
+  - LLM
+  - Conversational AI
+  - Enterprise AI
+  - Pi
+  - Inflection-2.5
+  - Inference
+  - Empathic AI
+url: https://raw.githubusercontent.com/api-evangelist/inflection-ai/refs/heads/main/apis.yml
+created: '2026-05-23'
+modified: '2026-05-23'
+specificationVersion: '0.20'
+apis:
+  - aid: inflection-ai:conversational-api
+    name: Inflection Conversational API
+    description: >-
+      Enterprise inference API serving Inflection's empathic conversational
+      foundation models (Inflection-2.5 series and successors). Accepts chat
+      message arrays, context, and parameters and returns assistant
+      completions. Authenticated with API keys issued from the developer
+      portal.
+    humanURL: https://developers.inflection.ai/
+    baseURL: https://developers.inflection.ai/
+    tags:
+      - Chat
+      - Conversational
+      - Completions
+      - Enterprise
+    properties:
+      - type: Documentation
+        url: https://developers.inflection.ai/
+  - aid: inflection-ai:playground
+    name: Inflection Developer Playground
+    description: >-
+      Interactive playground inside the developer portal for testing prompts
+      against Inflection models before integrating against the Conversational
+      API.
+    humanURL: https://developers.inflection.ai/
+    baseURL: https://developers.inflection.ai/
+    tags:
+      - Playground
+      - Developer Tools
+    properties:
+      - type: Documentation
+        url: https://developers.inflection.ai/
+common:
+  - type: Website
+    url: https://inflection.ai/
+  - type: Enterprise
+    url: https://inflection.ai/enterprise
+  - type: DeveloperPortal
+    url: https://developers.inflection.ai/
+  - type: Pi
+    url: https://pi.ai/
+  - type: Blog
+    url: https://inflection.ai/blog
+  - type: Press
+    url: https://inflection.ai/press
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/inflection-ai/
+  - type: X
+    url: https://x.com/inflectionAI
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
