@@ -1,0 +1,157 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Inflection AI API",
+    "description": "Specification for Inflection AI's API",
+    "license": {
+      "name": "MIT"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://gateway.inf7cw9.com/external/api"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/inference": {
+      "post": {
+        "description": "Generates a completion to the provided conversation.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "context": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "enum": ["AI", "Human", "Instruction"]
+                        },
+                        "text": {
+                          "type": "string"
+                        },
+                        "ts": {
+                          "type": "integer",
+                          "description": "Seconds since the Unix epoch"
+                        }
+                      },
+                      "required": ["type", "text"]
+                    }
+                  },
+                  "config": {
+                    "type": "string",
+                    "enum": ["inflection_3_pi", "inflection_3_productivity"]
+                  },
+                  "metadata": {
+                    "type": "object",
+                    "properties": {
+                      "user_firstname": {
+                        "type": "string"
+                      },
+                      "user_timezone": {
+                        "type": "string"
+                      },
+                      "user_country": {
+                        "type": "string"
+                      },
+                      "user_region": {
+                        "type": "string"
+                      },
+                      "user_city": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "required": ["context", "config"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "AI response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "created": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "text": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "required": [
+          "error",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}
