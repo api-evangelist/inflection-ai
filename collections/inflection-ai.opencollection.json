@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Inflection AI API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "POST /inference",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://gateway.inf7cw9.com/external/api/inference",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        },
+        "auth": {
+          "type": "bearer",
+          "token": "{{bearerToken}}"
+        }
+      },
+      "docs": "Generates a completion to the provided conversation."
+    }
+  ],
+  "bundled": true
+}

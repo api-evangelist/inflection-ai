@@ -1,0 +1,239 @@
+{
+  "item": [
+    {
+      "id": "f3a1befc-7ed1-455c-84f2-94e434b14ebf",
+      "name": "Generates a completion to the provided conversation.",
+      "request": {
+        "name": "Generates a completion to the provided conversation.",
+        "description": {
+          "content": "Generates a completion to the provided conversation.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "inference"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{bearerToken}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"context\": [\n    {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\",\n      \"ts\": \"<integer>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\",\n      \"ts\": \"<integer>\"\n    }\n  ],\n  \"config\": \"<string>\",\n  \"metadata\": {\n    \"user_firstname\": \"<string>\",\n    \"user_timezone\": \"<string>\",\n    \"user_country\": \"<string>\",\n    \"user_region\": \"<string>\",\n    \"user_city\": \"<string>\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "3da30aba-d82c-44a6-94d5-8b27828b3a04",
+          "name": "AI response",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "inference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"context\": [\n    {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\",\n      \"ts\": \"<integer>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\",\n      \"ts\": \"<integer>\"\n    }\n  ],\n  \"config\": \"<string>\",\n  \"metadata\": {\n    \"user_firstname\": \"<string>\",\n    \"user_timezone\": \"<string>\",\n    \"user_country\": \"<string>\",\n    \"user_region\": \"<string>\",\n    \"user_city\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"created\": 4577.586709258317,\n  \"text\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "95812cb7-8ed5-4e67-a754-ce71f6c507ea",
+          "name": "Unexpected error",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "inference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"context\": [\n    {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\",\n      \"ts\": \"<integer>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\",\n      \"ts\": \"<integer>\"\n    }\n  ],\n  \"config\": \"<string>\",\n  \"metadata\": {\n    \"user_firstname\": \"<string>\",\n    \"user_timezone\": \"<string>\",\n    \"user_country\": \"<string>\",\n    \"user_region\": \"<string>\",\n    \"user_city\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": 9565,\n  \"message\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "f93982ff-aab8-4bad-ab48-645795d602c9",
+          "name": "Rate limit exceeded",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "inference"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"context\": [\n    {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\",\n      \"ts\": \"<integer>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"text\": \"<string>\",\n      \"ts\": \"<integer>\"\n    }\n  ],\n  \"config\": \"<string>\",\n  \"metadata\": {\n    \"user_firstname\": \"<string>\",\n    \"user_timezone\": \"<string>\",\n    \"user_country\": \"<string>\",\n    \"user_region\": \"<string>\",\n    \"user_city\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Too Many Requests",
+          "code": 429,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"error\": 9565,\n  \"message\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://gateway.inf7cw9.com/external/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "28b8912a-a442-44f1-a4b9-0cdc69d6648c",
+    "name": "Inflection AI API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Specification for Inflection AI's API",
+      "type": "text/plain"
+    }
+  }
+}
